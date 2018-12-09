@@ -1,5 +1,6 @@
 package project2.mobile.cs.fsu.edu.blogapp;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,6 +23,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class MainActivity extends AppCompatActivity {
 
     public static final String MAIN = "main_activity_logs";
+    public static final String PASS_USER = "pass_user";
 
     FirebaseAuth mAuth = FirebaseAuth.getInstance();
     FirebaseUser currentUser = mAuth.getCurrentUser();
@@ -52,12 +54,13 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    void login(String email, String password){
+    void login(final String email, final String password){
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     currentUser = mAuth.getCurrentUser();
+                    openArticleActivity(email);
                 }else{
                     if(task.getException() != null) {
                         Toast.makeText(MainActivity.this,
@@ -69,5 +72,31 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+
+    /*
+        Asynchronously gets user info and then takes user to article activity.
+    */
+    void openArticleActivity(String email){
+        users.document(email).get().addOnCompleteListener(this,
+            new OnCompleteListener<DocumentSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                    if(task.isSuccessful()){
+                        DocumentSnapshot userInfo = task.getResult();
+                        if(userInfo != null && userInfo.exists()){
+                            User user = userInfo.toObject(User.class);
+                            Intent intent = new Intent(MainActivity.this, ArticleActivity.class);
+                            intent.putExtra(PASS_USER, user);
+                            startActivity(intent);
+                        }else{
+                            Log.d(MAIN, "User retrieval failure: User did not exist");
+                        }
+                    }else{
+                        Log.d(MAIN, "User retrieval failure.", task.getException());
+                    }
+                }
+            });
     }
 }
