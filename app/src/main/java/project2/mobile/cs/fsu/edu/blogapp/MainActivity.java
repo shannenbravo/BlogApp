@@ -2,9 +2,14 @@ package project2.mobile.cs.fsu.edu.blogapp;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.content.Intent;
+import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -24,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
 
     public static final String MAIN = "main_activity_logs";
     public static final String PASS_USER = "pass_user";
+
+    private FloatingActionButton addPostButton;
+    private BottomNavigationView mainbottomNav;
 
     FirebaseAuth mAuth = FirebaseAuth.getInstance();
     FirebaseUser currentUser = mAuth.getCurrentUser();
@@ -52,6 +60,53 @@ public class MainActivity extends AppCompatActivity {
                 login(email, password);
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+
+            case R.id.logoutOption:
+                logOut();
+                return true;
+
+
+            default:
+                return false;
+
+
+        }
+
+    }
+
+    private void logOut() {
+
+        sendToLogin();
+    }
+
+
+    private void sendToLogin() {
+
+        Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);
+        startActivity(loginIntent);
+        finish();
+
     }
 
     void login(final String email, final String password){

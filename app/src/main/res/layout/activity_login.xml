@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorDarkLavender"
+    tools:context=".LoginActivity">
+
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:src="@drawable/purple"
+        android:gravity="center"
+        android:layout_marginLeft="50dp"
+        />
+
+
+
+    <EditText
+        android:id="@+id/editEmail"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:textColor="@android:color/white"
+        android:typeface="serif"
+        android:hint="Email"
+        android:drawableLeft="@drawable/ic_email"
+        android:textStyle="bold"
+        android:textColorHint="@android:color/white"
+        android:backgroundTint="@android:color/white"
+        android:layout_gravity="center"
+        android:layout_marginTop="0dp"/>
+
+    <EditText
+        android:id="@+id/editPassword"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:textColor="@android:color/white"
+        android:typeface="serif"
+        android:hint="Password"
+        android:drawableLeft="@drawable/ic_lock"
+        android:textStyle="bold"
+        android:textColorHint="@android:color/white"
+        android:backgroundTint="@android:color/white"
+        android:layout_gravity="center"
+        android:layout_marginTop="0dp"/>
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:id="@+id/loginButton"
+        android:background="@android:color/white"
+        android:textStyle="bold"
+        android:text="Login"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#000000"
+        android:typeface="serif"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="23dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="Not a member?"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:layout_width="100dp"
+        android:id="@+id/reggi"
+        android:layout_height="50dp"
+        android:text="Sign up"
+        android:textColor="#FFFFFF"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"/>
+
+
+</LinearLayout>
