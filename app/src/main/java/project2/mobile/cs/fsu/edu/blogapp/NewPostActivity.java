@@ -2,6 +2,7 @@ package project2.mobile.cs.fsu.edu.blogapp;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -16,6 +17,8 @@ public class NewPostActivity extends AppCompatActivity {
     private Spinner topics;
     private Button postBlogButton;
     private ProgressDialog progressBar;
+    private HomeFragment homeFragment;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +43,8 @@ public class NewPostActivity extends AppCompatActivity {
 //        topics.setAdapter(peopleArray);
 
 
+
+
         postBlogButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,8 +57,10 @@ public class NewPostActivity extends AppCompatActivity {
                 if(!TextUtils.isEmpty(blogText) && !TextUtils.isEmpty(title)) {
                     progressBar.setMessage("Posting BlogPost...");
                     progressBar.show();
-                    Intent newPostIntent = new Intent(NewPostActivity.this, MainActivity.class);
-                    startActivity(newPostIntent);
+                    homeFragment = HomeFragment.newInstance();
+                    FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                    fragmentTransaction.add(R.id.main_container, homeFragment);
+                    fragmentTransaction.commit();
                 }
             }
         });

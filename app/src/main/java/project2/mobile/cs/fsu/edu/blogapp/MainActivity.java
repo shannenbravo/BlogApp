@@ -3,24 +3,22 @@ package project2.mobile.cs.fsu.edu.blogapp;
 import android.content.Intent;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 
 public class MainActivity extends AppCompatActivity {
 
 //    private FirebaseAuth mAuth;
 
     private FloatingActionButton addPostButton;
+    private HomeFragment homeFragment;
 
-    private BottomNavigationView mainbottomNav;
-
-//    private HomeFragment homeFragment;
-//    private NotificationFragment notificationFragment;
-//    private AccountFragment accountFragment;
 
 
 
@@ -39,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
+
 
     }
 
@@ -69,6 +70,11 @@ public class MainActivity extends AppCompatActivity {
             case R.id.logoutOption:
                 logOut();
                 return true;
+
+            case R.id.homeOption:
+                HomeFragment fragment = new HomeFragment();
+                FragmentManager manager = getSupportFragmentManager();
+                manager.beginTransaction().replace(R.id.main_container, fragment, fragment.getTag()).commit();
 
 
             default:
