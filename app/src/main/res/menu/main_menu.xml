@@ -8,10 +8,19 @@
         android:icon="@drawable/ic_action_search"
         android:title="@string/action_search_text"
         app:showAsAction="always" />
+
+    <item
+        android:id="@+id/homeOption"
+        android:icon="@drawable/ic_action_home_button"
+        android:title="@string/action_home_text"
+        app:showAsAction="always" />
+
     <item
         android:id="@+id/logoutOption"
         android:icon="@drawable/ic_action_logout"
         android:title="@string/action_logout_text"
         app:showAsAction="always" />
+
+
 
 </menu>
