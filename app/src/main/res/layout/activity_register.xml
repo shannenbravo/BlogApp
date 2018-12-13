@@ -11,8 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorDarkLavender"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
+
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -34,6 +34,7 @@
             android:paddingBottom="20dp"
             android:paddingTop="10dp"
             android:layout_gravity="center"/>
+
     </LinearLayout>
 
     <ImageView
@@ -44,8 +45,6 @@
         android:layout_marginTop="-10dp"
         android:rotation="45"
         />
-
-
 
     <LinearLayout
         android:layout_width="300dp"
@@ -61,8 +60,8 @@
             android:layout_height="40dp"
             android:src="@drawable/ic_person_black"
             android:background="@color/colorDarkLavender"
-
             android:tint="#ffffff"/>
+
         <EditText
             android:id="@+id/name"
             android:layout_width="match_parent"
@@ -70,6 +69,7 @@
             android:background="#DADADA"
             android:layout_marginLeft="5dp"
             android:hint="User Name"/>
+
     </LinearLayout>
 
     <LinearLayout
@@ -78,8 +78,7 @@
         android:orientation="horizontal"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="50dp"
-        android:paddingRight="30dp"
-        >
+        android:paddingRight="30dp">
 
         <ImageView
             android:layout_width="40dp"
@@ -87,6 +86,7 @@
             android:background="@color/colorLightLavender"
             android:src="@drawable/ic_email_black"
             android:tint="#ffffff"/>
+
         <EditText
             android:id="@+id/email"
             android:layout_width="match_parent"
@@ -94,6 +94,7 @@
             android:background="#DADADA"
             android:layout_marginLeft="5dp"
             android:hint="Email"/>
+
     </LinearLayout>
 
     <LinearLayout
@@ -102,8 +103,7 @@
         android:orientation="horizontal"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="50dp"
-        android:paddingRight="30dp"
-        >
+        android:paddingRight="30dp">
 
         <ImageView
             android:layout_width="40dp"
@@ -111,6 +111,7 @@
             android:background="@color/colorLightLavender"
             android:src="@drawable/ic_lock"
             android:tint="#ffffff"/>
+
         <EditText
             android:id="@+id/editPassword"
             android:layout_width="match_parent"
@@ -118,8 +119,8 @@
             android:background="#DADADA"
             android:layout_marginLeft="5dp"
             android:hint="Password"/>
-    </LinearLayout>
 
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="300dp"
@@ -127,8 +128,7 @@
         android:orientation="horizontal"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="50dp"
-        android:paddingRight="30dp"
-        >
+        android:paddingRight="30dp">
 
         <ImageView
             android:layout_width="40dp"
@@ -136,6 +136,7 @@
             android:background="@color/colorLightLavender"
             android:src="@drawable/ic_lock"
             android:tint="#ffffff"/>
+
         <EditText
             android:id="@+id/cPassword"
             android:layout_width="match_parent"
@@ -143,6 +144,7 @@
             android:background="#DADADA"
             android:layout_marginLeft="5dp"
             android:hint="Confirm Password"/>
+
     </LinearLayout>
 
     <Button
@@ -159,4 +161,3 @@
         android:background="@color/colorLightLavender"/>
 
 </LinearLayout>
-

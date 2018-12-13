@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-
     <item
-        android:id="@+id/searchOption"
-        android:icon="@drawable/ic_action_search"
-        android:title="@string/action_search_text"
-        app:showAsAction="always" />
-
-    <item
-        android:id="@+id/homeOption"
-        android:icon="@drawable/ic_action_home_button"
-        android:title="@string/action_home_text"
+        android:id="@+id/addPostOption"
+        android:icon="@drawable/ic_action_add"
+        android:title="@string/action_addPost_text"
         app:showAsAction="always" />
 
     <item
@@ -20,7 +14,5 @@
         android:icon="@drawable/ic_action_logout"
         android:title="@string/action_logout_text"
         app:showAsAction="always" />
-
-
 
 </menu>
