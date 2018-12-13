@@ -52,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         asyncLoadBlogs();
-        //createDummyBlogs();
     }
 
     void createDummyBlogs(){
@@ -102,7 +101,6 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
-
     }
 
     @Override
