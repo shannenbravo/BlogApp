@@ -34,7 +34,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="url" value="jar:file:/Applications/Android%20Studio.app/Contents/plugins/android/lib/android.jar!/images/material_design_icons/action/ic_account_circle_black_24dp.xml" />
+                                                <entry key="url" value="jar:file:/Applications/Android%20Studio.app/Contents/plugins/android/lib/android.jar!/images/material_design_icons/communication/ic_comment_black_24dp.xml" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -44,9 +44,9 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="outputName" value="ic_action_no_pic" />
-                                      <entry key="theme" value="HOLO_DARK" />
-                                      <entry key="themeColor" value="858585" />
+                                      <entry key="outputName" value="ic_action_purple_comment" />
+                                      <entry key="theme" value="CUSTOM" />
+                                      <entry key="themeColor" value="c752ff" />
                                     </map>
                                   </option>
                                 </PersistentState>
