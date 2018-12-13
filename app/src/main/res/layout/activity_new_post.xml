@@ -23,6 +23,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/topics_spinner"
         tools:ignore="MissingConstraints"
+        android:typeface="serif"
         />
 
     <Spinner
@@ -35,7 +36,8 @@
         android:visibility="visible"
         app:layout_constraintTop_toBottomOf="@id/postTitle_editText"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="8dp" />
+        tools:layout_editor_absoluteX="8dp"
+        android:typeface="serif"/>
 
     <Button
         android:id="@+id/postBlog_button"
@@ -52,7 +54,8 @@
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:typeface="serif"/>
 
     <EditText
         android:id="@+id/postTitle_editText"
@@ -69,6 +72,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:typeface="serif"/>
 
 </android.support.constraint.ConstraintLayout>

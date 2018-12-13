@@ -59,7 +59,8 @@
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/blog_user_image"
                 app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginLeft="8dp" />
+                android:layout_marginLeft="8dp"
+                android:typeface="serif"/>
 
             <TextView
                 android:id="@+id/blog_title"
@@ -71,7 +72,8 @@
                 android:text="Title"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/blog_user_image"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:typeface="serif"/>
 
             <TextView
                 android:id="@+id/blog_date"
@@ -80,7 +82,8 @@
                 android:text="Blog Post Date"
                 tools:ignore="MissingConstraints"
                 tools:layout_editor_absoluteX="276dp"
-                tools:layout_editor_absoluteY="48dp" />
+                tools:layout_editor_absoluteY="48dp"
+                />
 
             <TextView
                 android:id="@+id/blog_post"
@@ -92,6 +95,7 @@
                 android:textAlignment="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                android:typeface="serif"
                 app:layout_constraintTop_toBottomOf="@+id/blog_user_image" />
 
             <TextView
@@ -104,7 +108,8 @@
                 android:text="Blogger will choose a topic for their post"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/blog_post" />
+                app:layout_constraintTop_toBottomOf="@+id/blog_post"
+                android:typeface="serif"/>
 
             <TextView
                 android:id="@+id/blog_like_count"
@@ -117,7 +122,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/blog_like_btn"
                 app:layout_constraintTop_toBottomOf="@+id/blog_topic"
-                android:layout_marginLeft="8dp" />
+                android:layout_marginLeft="8dp"
+                android:typeface="serif"/>
 
             <TextView
                 android:id="@+id/blog_comment_count"
@@ -130,7 +136,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/blog_topic"
-                android:layout_marginRight="16dp" />
+                android:layout_marginRight="16dp"
+                android:typeface="serif"/>
 
             <ImageView
                 android:id="@+id/blog_comment_icon"
