@@ -15,8 +15,6 @@ public class NewPostActivity extends AppCompatActivity {
     private Spinner topics;
     private Button postBlogButton;
     private ProgressDialog progressBar;
-    private HomeFragment homeFragment;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

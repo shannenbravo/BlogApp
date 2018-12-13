@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-//sean this should work but i dont have the firebase stuff so i commented it out
+//sean/austin this should work but i dont have the firebase stuff so i commented it out
 //    @Override
 //    protected void onStart() {
 //        super.onStart();
@@ -102,7 +102,6 @@ public class MainActivity extends AppCompatActivity {
             case R.id.addPostOption:
                 Intent newPostIntent = new Intent(MainActivity.this, NewPostActivity.class);
                 startActivity(newPostIntent);
-            case R.id.homeOption:
                 return true;
 
             case R.id.logoutOption:
@@ -111,7 +110,6 @@ public class MainActivity extends AppCompatActivity {
 
             default:
                 return false;
-
 
         }
 
