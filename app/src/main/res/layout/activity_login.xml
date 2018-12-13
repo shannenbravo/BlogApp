@@ -16,8 +16,6 @@
         android:layout_marginLeft="50dp"
         />
 
-
-
     <EditText
         android:id="@+id/editEmail"
         android:layout_width="300dp"

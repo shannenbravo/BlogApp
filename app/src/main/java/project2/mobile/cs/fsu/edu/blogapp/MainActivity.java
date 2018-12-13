@@ -1,12 +1,11 @@
 package project2.mobile.cs.fsu.edu.blogapp;
 
 import android.content.Intent;
-import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.FragmentManager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import com.google.firebase.auth.FirebaseAuth;
@@ -20,6 +19,10 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import javax.annotation.Nullable;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     CollectionReference blogs = db.collection("blogs");
+    private RecyclerView recyclerView;
 
     User user;
 
@@ -82,6 +86,9 @@ public class MainActivity extends AppCompatActivity {
                         Blog blog = documentSnapshot.toObject(Blog.class);
                         blog.setBlogId(documentSnapshot.getId());
                         int oldIndex = dc.getNewIndex(), newIndex = dc.getOldIndex();
+        recyclerView = (RecyclerView)findViewById(R.id.recyclerview);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setHasFixedSize(true);
 
                         switch(dc.getType()){
                             case ADDED:
@@ -100,16 +107,69 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+//sean/austin this should work but i dont have the firebase stuff so i commented it out
 //    @Override
 //    protected void onStart() {
 //        super.onStart();
-//
-//        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
-//        if (currentUser == null) {
-//
-//            sendToLogin();
-//        }
+//        mAuth.addAuthStateListener(mAuthListener);
+//        FirebaseRecyclerAdapter<BlogPost, BlogPostViewHolder> recycleAdapter = new FirebaseRecyclerAdapter<BlogPost, BlogPostViewHolder>(
+//                Blogzone.class,
+//                R.layout.blog_list_item,
+//                BlogPostViewHolder.class,
+//                mDatabase
+//        )
+//        {
+//            @Override
+//            protected void populateViewHolder(BlogPostViewHolder viewHolder, BlogPost model, int position) {
+//                final String post_key = getRef(position).getKey().toString();
+//                viewHolder.setImage_thumb(model.getImage_thumb());
+//                viewHolder.setTitle(model.getTitle());
+//                viewHolder.setAuthor(model.getAuthor());
+//                viewHolder.setPost(model.getPost());
+//                viewHolder.setTopic(model.getTopic());
+//            }
+//        };
+//        recyclerView.setAdapter(recycleAdapter);
 //    }
+
+    public static class BlogPostViewHolder extends RecyclerView.ViewHolder{
+        View view;
+        public BlogPostViewHolder(View viewHolder) {
+            super(viewHolder);
+            view = viewHolder;
+        }
+
+        public void setUsername(String username){
+            TextView postUser = view.findViewById(R.id.blogger_username);
+            postUser.setText(username);
+        }
+
+        public void setTitle(String title){
+            TextView post_title = view.findViewById(R.id.blog_title);
+            post_title.setText(title);
+        }
+
+        public void setPost(String post){
+            TextView blogPost = view.findViewById(R.id.blog_post);
+            blogPost.setText(post);
+        }
+
+        public void setTopic(String topic){
+            TextView postTopic = view.findViewById(R.id.blog_topic);
+            postTopic.setText(topic);
+        }
+
+        public void setImage_thumb(String image_thumb) {
+            ImageView userImage = view.findViewById(R.id.blog_user_image);
+            userImage.setVisibility(View.VISIBLE);
+        }
+
+        public void setTimestamp(String date){
+            TextView postDate = view.findViewById(R.id.blog_date);
+            postDate.setText(date);
+        }
+
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -123,30 +183,25 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()) {
+            case R.id.addPostOption:
+                Intent newPostIntent = new Intent(MainActivity.this, NewPostActivity.class);
+                startActivity(newPostIntent);
+                return true;
 
             case R.id.logoutOption:
                 logOut();
                 return true;
 
-            case R.id.homeOption:
-                HomeFragment fragment = new HomeFragment();
-                FragmentManager manager = getSupportFragmentManager();
-                manager.beginTransaction().replace(R.id.main_container, fragment, fragment.getTag()).commit();
-
-
             default:
                 return false;
 
-
         }
-
     }
 
     private void logOut() {
 
         sendToLogin();
     }
-
 
     private void sendToLogin() {
 
