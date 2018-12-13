@@ -37,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
         setUpLoginListener();
         setUpRegisterListener();
 
-        quickLoginTest(); //TODO: Get rid of this
+        //quickLoginTest(); //TODO: Get rid of this
     }
 
     void quickLoginTest(){

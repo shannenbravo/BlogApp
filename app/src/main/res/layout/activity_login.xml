@@ -32,6 +32,7 @@
         android:layout_marginTop="0dp"/>
 
     <EditText
+        android:inputType="textPassword"
         android:id="@+id/editPassword"
         android:layout_width="300dp"
         android:layout_height="50dp"
