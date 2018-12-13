@@ -1,3 +1,6 @@
+
+Demo: https://drive.google.com/open?id=1cHvVCXZSLyY_xyqvv1vFm3LxA4rYuTCr
+
 # Purple Blog
 
 Purple Blog is a tech-based blogging app that allows its users to create their own blogs for other users to read. 
@@ -21,3 +24,4 @@ Login Activity
       with the article, such as the title, author, content, date of creation, etc.
 
       The author of an article (or an editor designated by the author) will have an option in the options menu to edit the article
+

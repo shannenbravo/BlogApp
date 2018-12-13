@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "124825814636",
+    "firebase_url": "https://techblog-25031.firebaseio.com",
+    "project_id": "techblog-25031",
+    "storage_bucket": "techblog-25031.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:124825814636:android:facf5e7d8e2e12b2",
+        "android_client_info": {
+          "package_name": "project2.mobile.cs.fsu.edu.blogapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "124825814636-9v9a8o9m9t2tm1r8hqsqt3qcq3v5r7r7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "project2.mobile.cs.fsu.edu.blogapp",
+            "certificate_hash": "98eb3cc860e3ac6cdae217259eb4fb40dd4e6581"
+          }
+        },
+        {
+          "client_id": "124825814636-6ebf1b2hc5dhbgu92kvqrje46usbhhn8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAf5C9VZEo_pCH5Fb5uIgEYsoKArdlUgnI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "124825814636-6ebf1b2hc5dhbgu92kvqrje46usbhhn8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
