@@ -81,9 +81,8 @@
                 android:layout_height="22dp"
                 android:text="Blog Post Date"
                 tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="276dp"
-                tools:layout_editor_absoluteY="48dp"
-                />
+                tools:layout_editor_absoluteX="241dp"
+                tools:layout_editor_absoluteY="44dp" />
 
             <TextView
                 android:id="@+id/blog_post"
@@ -91,6 +90,8 @@
                 android:layout_height="200dp"
                 android:layout_marginTop="16dp"
                 android:scaleType="centerCrop"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:text="@string/content_test"
                 android:textAlignment="center"
                 app:layout_constraintEnd_toEndOf="parent"
