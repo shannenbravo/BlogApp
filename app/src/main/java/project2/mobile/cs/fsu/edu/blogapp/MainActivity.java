@@ -20,9 +20,6 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import javax.annotation.Nullable;
-import android.view.View;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 
 public class MainActivity extends AppCompatActivity {
 

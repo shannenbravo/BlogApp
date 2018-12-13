@@ -33,6 +33,11 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        checkForLoginFromRegistration();
+        setUpLoginListener();
+        setUpRegisterListener();
+    }
+    void checkForLoginFromRegistration(){
         Bundle extras = getIntent().getExtras();
         if(extras != null) {
             String email = extras.getString(Register.EMAIL);
@@ -43,11 +48,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         }
-
-        setUpLoginListener();
-        setUpRegisterListener();
     }
-
     void setUpRegisterListener(){
         this.findViewById(R.id.reggi).setOnClickListener(new View.OnClickListener() {
             @Override
