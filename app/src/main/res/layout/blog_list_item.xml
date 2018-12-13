@@ -26,26 +26,40 @@
 
 
             <ImageView
+                android:id="@+id/blog_like_btn"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/blog_topic"
+                app:srcCompat="@drawable/ic_action_like_button" />
+
+            <ImageView
                 android:id="@+id/blog_user_image"
                 android:layout_width="48dp"
                 android:layout_height="47dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
                 android:layout_marginTop="16dp"
                 android:src="@drawable/ic_action_user_image"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginLeft="16dp" />
 
             <TextView
                 android:id="@+id/blogger_name"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
                 android:text="Name"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/blog_user_image"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginLeft="8dp" />
 
             <TextView
                 android:id="@+id/blog_title"
@@ -100,12 +114,12 @@ gjnjknsjknbjnsgnjkdjbkntugjjgng"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
                 android:text="0 Likes"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/blog_like_btn"
-                app:layout_constraintTop_toBottomOf="@+id/blog_topic" />
+                app:layout_constraintTop_toBottomOf="@+id/blog_topic"
+                android:layout_marginLeft="8dp" />
 
             <TextView
                 android:id="@+id/blog_comment_count"
@@ -113,27 +127,25 @@ gjnjknsjknbjnsgnjkdjbkntugjjgng"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp"
                 android:layout_marginTop="8dp"
                 android:text="0 Comments"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/blog_topic" />
+                app:layout_constraintTop_toBottomOf="@+id/blog_topic"
+                android:layout_marginRight="16dp" />
 
             <ImageView
                 android:id="@+id/blog_comment_icon"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_marginBottom="8dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
                 android:layout_marginTop="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/blog_comment_count"
                 app:layout_constraintTop_toBottomOf="@+id/blog_topic"
-                />
-                <!--app:srcCompat="@mipmap/action_comment_icon" -->
-                <!-- The above was causing program not to compile for some reason -->
+                app:srcCompat="@drawable/ic_action_comment"
+                android:layout_marginRight="8dp" />
 
         </android.support.constraint.ConstraintLayout>
 

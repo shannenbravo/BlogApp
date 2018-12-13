@@ -3,6 +3,7 @@ package project2.mobile.cs.fsu.edu.blogapp;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
@@ -15,6 +16,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import android.support.v7.app.AppCompatActivity;
+import android.app.AlertDialog;
 
 public class Register extends AppCompatActivity {
 
@@ -92,4 +95,18 @@ public class Register extends AppCompatActivity {
                 });
     }
 
+
+    public void showAlert(String errMessage){
+        AlertDialog.Builder formNotComplete = new AlertDialog.Builder(Register.this);
+        formNotComplete.setMessage(errMessage).setCancelable(false).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.cancel();
+            }
+        });
+
+        AlertDialog alert = formNotComplete.create();
+        alert.setTitle("Alert!");
+        alert.show();
+    }
 }

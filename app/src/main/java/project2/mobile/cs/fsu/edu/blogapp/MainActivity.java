@@ -3,6 +3,7 @@ package project2.mobile.cs.fsu.edu.blogapp;
 import android.content.Intent;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,6 +20,9 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import javax.annotation.Nullable;
+import android.view.View;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
     FirebaseAuth mAuth = FirebaseAuth.getInstance();
     FirebaseUser currentUser = mAuth.getCurrentUser();
     FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private HomeFragment homeFragment;
+
 
     CollectionReference blogs = db.collection("blogs");
 
@@ -97,28 +103,56 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//
+//        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+//        if (currentUser == null) {
+//
+//            sendToLogin();
+//        }
+//    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+
         getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
+
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
         switch (item.getItemId()) {
+
             case R.id.logoutOption:
                 logOut();
                 return true;
+
+            case R.id.homeOption:
+                HomeFragment fragment = new HomeFragment();
+                FragmentManager manager = getSupportFragmentManager();
+                manager.beginTransaction().replace(R.id.main_container, fragment, fragment.getTag()).commit();
+
+
             default:
                 return false;
+
+
         }
+
     }
+
     private void logOut() {
+
         sendToLogin();
     }
 
 
     private void sendToLogin() {
+
         Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);
         startActivity(loginIntent);
         finish();
