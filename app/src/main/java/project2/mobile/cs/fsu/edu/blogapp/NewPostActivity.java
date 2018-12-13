@@ -24,15 +24,12 @@ public class NewPostActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Add New Post");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
-
         blogTitle = findViewById(R.id.postTitle_editText);
         blogPost = findViewById(R.id.blogPost_editText);
         topics = findViewById(R.id.topics_spinner);
         postBlogButton = findViewById(R.id.postBlog_button);
 
         progressBar = new ProgressDialog(this);
-
 
         postBlogButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,7 +47,6 @@ public class NewPostActivity extends AppCompatActivity {
                 }
             }
         });
-
 
     }
 }

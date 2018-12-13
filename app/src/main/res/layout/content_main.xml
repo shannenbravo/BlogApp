@@ -11,9 +11,6 @@
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main">
 
-
-<!-- TODO: Update blank fragment layout -->
-
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"

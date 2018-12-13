@@ -4,24 +4,37 @@ import java.util.Date;
 
 public class BlogPost {
 
-    public String title, author, post, topic, image_thumb;
+    public String username, title, post, topic, image_thumb;
     public Date timestamp;
 
-    public BlogPost(String title, String post, String author, String topic, String image_thumb, Date timestamp) {
-        this.title = title;
-        this.post = post;
-        this.author = author;
-        this.topic = topic;
+    public BlogPost(String image_thumb, String username, String title, Date timestamp, String post, String topic) {
         this.image_thumb = image_thumb;
+        this.username = username;
+        this.title = title;
         this.timestamp = timestamp;
-
+        this.post = post;
+        this.topic = topic;
 
     }
 
     public BlogPost() {
     }
 
+    public String getImage_thumb() {
+        return image_thumb;
+    }
 
+    public void setImage_thumb(String image_thumb) {
+        this.image_thumb = image_thumb;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
     public String getTitle() {
         return title;
@@ -31,12 +44,12 @@ public class BlogPost {
         this.title = title;
     }
 
-    public String getAuthor() {
-        return author;
+    public Date getTimestamp() {
+        return timestamp;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setTimestamp(Date timestamp) {
+        this.timestamp = timestamp;
     }
 
     public String getPost() {
@@ -47,10 +60,6 @@ public class BlogPost {
         this.post = post;
     }
 
-    public String getImage_thumb() {
-        return image_thumb;
-    }
-
     public String getTopic() {
         return topic;
     }
@@ -59,15 +68,4 @@ public class BlogPost {
         this.topic = topic;
     }
 
-    public void setImage_thumb(String image_thumb) {
-        this.image_thumb = image_thumb;
-    }
-
-    public Date getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(Date timestamp) {
-        this.timestamp = timestamp;
-    }
 }

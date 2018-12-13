@@ -26,8 +26,6 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
 
-
-
     }
 
 //sean/austin this should work but i dont have the firebase stuff so i commented it out
@@ -56,33 +54,40 @@ public class MainActivity extends AppCompatActivity {
 //    }
 
     public static class BlogPostViewHolder extends RecyclerView.ViewHolder{
-        View mView;
-        public BlogPostViewHolder(View itemView) {
-            super(itemView);
-            mView = itemView;
+        View view;
+        public BlogPostViewHolder(View viewHolder) {
+            super(viewHolder);
+            view = viewHolder;
         }
+
+        public void setUsername(String username){
+            TextView postUser = view.findViewById(R.id.blogger_username);
+            postUser.setText(username);
+        }
+
         public void setTitle(String title){
-            TextView post_title = mView.findViewById(R.id.blog_title);
+            TextView post_title = view.findViewById(R.id.blog_title);
             post_title.setText(title);
-        }
-        public void setAuthor(String author){
-            TextView postAuthor = mView.findViewById(R.id.blogger_name);
-            postAuthor.setText(author);
         }
 
         public void setPost(String post){
-            TextView blogPost = mView.findViewById(R.id.blog_post);
+            TextView blogPost = view.findViewById(R.id.blog_post);
             blogPost.setText(post);
         }
 
         public void setTopic(String topic){
-            TextView postTopic = mView.findViewById(R.id.blog_topic);
+            TextView postTopic = view.findViewById(R.id.blog_topic);
             postTopic.setText(topic);
         }
 
         public void setImage_thumb(String image_thumb) {
-            ImageView userImage = mView.findViewById(R.id.blog_user_image);
+            ImageView userImage = view.findViewById(R.id.blog_user_image);
             userImage.setVisibility(View.VISIBLE);
+        }
+
+        public void setTimestamp(String date){
+            TextView postDate = view.findViewById(R.id.blog_date);
+            postDate.setText(date);
         }
 
     }
@@ -112,14 +117,12 @@ public class MainActivity extends AppCompatActivity {
                 return false;
 
         }
-
     }
 
     private void logOut() {
 
         sendToLogin();
     }
-
 
     private void sendToLogin() {
 

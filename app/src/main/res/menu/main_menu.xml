@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-
     <item
         android:id="@+id/addPostOption"
         android:icon="@drawable/ic_action_add"
@@ -15,6 +14,5 @@
         android:icon="@drawable/ic_action_logout"
         android:title="@string/action_logout_text"
         app:showAsAction="always" />
-
 
 </menu>
