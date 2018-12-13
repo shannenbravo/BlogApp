@@ -33,7 +33,7 @@ public class Register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        verifiedRegistration(new User("saenae", "sean.ebanks@yahoo212.com"), "123564");
+        verifiedRegistration(new User("saenae", "seanebanks1@gmail.com"), "123456");
     }
 
     /*
