@@ -6,6 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -31,12 +34,53 @@ public class Register extends AppCompatActivity {
 
     CollectionReference users = db.collection("users");
 
+    Button registerButton;
+    EditText username;
+    EditText email;
+    EditText password;
+    EditText cPassword;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        verifiedRegistration(new User("saenae", "seanebanks1@gmail.com"), "123456");
+        getViews();
+        setUpRegisterButtonListener();
+    }
+
+    void getViews(){
+        registerButton = findViewById(R.id.registerButt);
+        username = findViewById(R.id.name);
+        email = findViewById(R.id.email);
+        password = findViewById(R.id.editPassword);
+        cPassword = findViewById(R.id.cPassword);
+    }
+    void setUpRegisterButtonListener(){
+        registerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(password != null && username != null && email != null) {
+                    String passwordString = password.getText().toString();
+                    String userNameString = username.getText().toString();
+                    String emailString = email.getText().toString();
+
+                    String err = null;
+                    if (emailString.equals("") || userNameString.equals("") || passwordString.equals("")) {
+                        err = "All fields must be filled in!";
+                    }
+                    if (!cPassword.getText().toString().equals(passwordString)) {
+                        err = "Passwords do not match!";
+                    }
+                    if (err != null) {
+                        showAlert(err);
+                        return;
+                    }
+                    User user = new User(userNameString, emailString);
+                    verifiedRegistration(user, passwordString);
+                }
+            }
+        });
     }
 
     /*
@@ -54,10 +98,7 @@ public class Register extends AppCompatActivity {
                         if(task.isSuccessful()){
                             DocumentSnapshot userInfo = task.getResult();
                             if(userInfo != null && userInfo.exists()){
-                                Toast.makeText(
-                                        Register.this,
-                                        "A user with this email already exist.",
-                                        Toast.LENGTH_SHORT).show();
+                                showAlert("A user with this email already exist.");
                             }else{
                                 registration(user, password);
                             }
@@ -84,10 +125,7 @@ public class Register extends AppCompatActivity {
                             finish();
                         }else{
                             if(task.getException() != null) {
-                                Toast.makeText(Register.this,
-                                        "Registration failed: " + task.getException().getMessage(),
-                                        Toast.LENGTH_LONG).show();
-
+                                showAlert("Registration failed: " + task.getException());
                                 Log.d(REGISTER, "Registration failure.", task.getException());
                             }
                         }
