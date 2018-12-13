@@ -16,7 +16,7 @@ public class Dashboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
-        write = (LinearLayout)findViewById(R.id.writePost);
+        write = findViewById(R.id.writePost);
         write.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -24,6 +24,7 @@ public class Dashboard extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        readStuff = findViewById(R.id.readApost);
 
         readStuff.setOnClickListener(new View.OnClickListener() {
             @Override
