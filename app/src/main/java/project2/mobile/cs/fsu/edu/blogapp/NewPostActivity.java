@@ -1,10 +1,8 @@
 package project2.mobile.cs.fsu.edu.blogapp;
 
 import android.app.ProgressDialog;
-import android.content.Intent;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -37,30 +35,20 @@ public class NewPostActivity extends AppCompatActivity {
 
         progressBar = new ProgressDialog(this);
 
-//        topics = findViewById(R.id.topics_spinner);
-//        ArrayAdapter<String> peopleArray = new ArrayAdapter<>(NewPostActivity.this, android.R.layout.simple_spinner_dropdown_item, blo);
-//        peopleArray.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        topics.setAdapter(peopleArray);
-
-
-
 
         postBlogButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                progressBar.setMessage("Posting BlogPost...");
+                progressBar.show();
 
                 final String blogText = blogPost.getText().toString();
                 final String title = blogTitle.getText().toString();
 
 
                 if(!TextUtils.isEmpty(blogText) && !TextUtils.isEmpty(title)) {
-                    progressBar.setMessage("Posting BlogPost...");
-                    progressBar.show();
-                    homeFragment = HomeFragment.newInstance();
-                    FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                    fragmentTransaction.add(R.id.main_container, homeFragment);
-                    fragmentTransaction.commit();
+
+                        //sean/austin -- need to implement stuff here to post blog  in the main activity
                 }
             }
         });

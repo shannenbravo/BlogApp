@@ -22,6 +22,8 @@
     <string name="bottom_home_text">Home</string>
     <string name="bottom_notification_text">Notification</string>
     <string name="bottom_ac_text">Account</string>
+    <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+
 
     <string-array name="blogPosts_topics">
         <item>Choose a topic for your post...</item>
@@ -37,4 +39,5 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="action_home_text">Home</string>
+    <string name="action_addPost_text">Add Post</string>
 </resources>
