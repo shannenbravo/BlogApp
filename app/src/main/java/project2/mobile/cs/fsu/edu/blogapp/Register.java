@@ -81,13 +81,6 @@ public class Register extends AppCompatActivity {
         });
     }
 
-    /*
-        verifiedRegistration checks Firestore for an existing user before starting the registration
-        process. Please use it instead of the below 'registration', which is a helper.
-
-        Parameters: - User object (add any extra fields necessary there; email is used as a key)
-                    - String password
-    */
     void verifiedRegistration(final User user, final String password){
         users.document(user.getEmail()).get().addOnCompleteListener(this,
                 new OnCompleteListener<DocumentSnapshot>() {

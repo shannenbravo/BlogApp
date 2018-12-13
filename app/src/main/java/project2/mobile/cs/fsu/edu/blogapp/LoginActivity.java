@@ -119,7 +119,7 @@ public class LoginActivity extends AppCompatActivity {
                                 if(user == null){
                                     Log.i(MAIN, "User not being created from toObject");
                                 }
-                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                Intent intent = new Intent(LoginActivity.this, Dashboard.class);
                                 intent.putExtra(MainActivity.PASS_USER, user);
                                 startActivity(intent);
                                 finish();

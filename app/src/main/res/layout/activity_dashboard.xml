@@ -68,7 +68,8 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:padding="16dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:id="@+id/writePost">
 
                     <ImageView
                         android:layout_width="80dp"
@@ -102,7 +103,8 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:padding="16dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:id="@+id/readApost">
 
                     <ImageView
                         android:layout_width="80dp"
