@@ -10,15 +10,20 @@
         android:id="@+id/blogPost_editText"
         android:layout_width="354dp"
         android:layout_height="257dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:ems="10"
-        android:hint="Type your blog here..."
+        android:hint="@string/type_your_blog_here"
         android:inputType="textMultiLine"
         android:textAlignment="center"
         android:textColorLink="@android:color/black"
-        app:layout_constraintBottom_toTopOf="@id/postBlog_button"
+        app:layout_constraintBottom_toTopOf="@+id/postBlog_button"
+        app:layout_constraintHeight_default="spread"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topics_spinner"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="15dp" />
+        />
 
     <Spinner
         android:id="@+id/topics_spinner"
@@ -43,7 +48,7 @@
         android:layout_marginStart="8dp"
         android:background="@color/colorPrimary"
         android:padding="16dp"
-        android:text="Post"
+        android:text="@string/post"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -53,16 +58,17 @@
         android:id="@+id/postTitle_editText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:ems="10"
-        android:hint="Post Title"
+        android:hint="@string/post_title"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="28dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
 </android.support.constraint.ConstraintLayout>

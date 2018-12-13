@@ -14,7 +14,6 @@ public class BlogPost {
         this.timestamp = timestamp;
         this.post = post;
         this.topic = topic;
-
     }
 
     public BlogPost() {
@@ -67,5 +66,7 @@ public class BlogPost {
     public void setTopic(String topic) {
         this.topic = topic;
     }
+
+
 
 }

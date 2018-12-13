@@ -33,7 +33,7 @@
         <activity
             android:name=".NewPostActivity"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".Dashboard"></activity>
+        <activity android:name=".Dashboard" />
     </application>
 
 </manifest>

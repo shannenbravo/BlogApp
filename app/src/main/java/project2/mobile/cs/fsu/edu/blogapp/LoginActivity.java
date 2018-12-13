@@ -36,7 +36,14 @@ public class LoginActivity extends AppCompatActivity {
         checkForLoginFromRegistration();
         setUpLoginListener();
         setUpRegisterListener();
+
+        quickLoginTest(); //TODO: Get rid of this
     }
+
+    void quickLoginTest(){
+        login("me@mail.com", "123456");
+    }
+
     void checkForLoginFromRegistration(){
         Bundle extras = getIntent().getExtras();
         if(extras != null) {
@@ -109,6 +116,9 @@ public class LoginActivity extends AppCompatActivity {
                             DocumentSnapshot userInfo = task.getResult();
                             if(userInfo != null && userInfo.exists()){
                                 User user = userInfo.toObject(User.class);
+                                if(user == null){
+                                    Log.i(MAIN, "User not being created from toObject");
+                                }
                                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                 intent.putExtra(MainActivity.PASS_USER, user);
                                 startActivity(intent);

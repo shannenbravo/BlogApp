@@ -39,4 +39,22 @@
     <string name="action_home_text">Home</string>
     <string name="action_addPost_text">Add Post</string>
 
+    <string name="content_test">
+        This is text to test out a blog, this is text to test out a blog, this is text to test out a blog,
+        this is text to test out a blog, this is text to test out a blog, this is text to test out a blog, this is text to test out a blog,
+        this is text to test out a blog, this is text to test out a blog, this is text to test out a blog, this is text to test out a blog,
+        this is text to test out a blog, this is text to test out a blog, this is text to test out a blog, this is text to test out a blog,
+        this is text to test out a blog, this is text to test out a blog, this is text to test out a blog, this is text to test out a blog,
+        this is text to test out a blog, this is text to test out a blog, this is text to test out a blog, this is text to test out a blog,
+        this is text to test out a blog, this is text to test out a blog, this is text to test out a blog, this is text to test out a blog
+    </string>
+    <string name="type_your_blog_here">Type your blog here...</string>
+    <string name="post">Post</string>
+    <string name="post_title">Post Title</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="not_a_member">Not a member?</string>
+    <string name="sign_up">Sign up</string>
+
 </resources>
