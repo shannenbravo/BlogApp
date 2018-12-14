@@ -25,3 +25,10 @@ Login Activity
 
       The author of an article (or an editor designated by the author) will have an option in the options menu to edit the article
 
+
+Contributors
+Shannen Bravo-Brown 
+Sean Ebanks 
+Bria Bostick 
+
+** Austin had nothing to do with this project. he wrote no code, did not help with the essay nor did he help with the powerpoint **
